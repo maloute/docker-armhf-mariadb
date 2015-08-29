@@ -1,0 +1,15 @@
+[Unit]
+Description=MariaDB database
+Requires=docker.service
+After=docker.service
+
+[Service]
+Restart=Always
+RestartSec=10
+ExecStartPre=-/usr/bin/docker kill mariadb
+ExecStartPre=-/usr/bin/docker rm mariadb
+ExecStart=/usr/bin/docker run --name=mariadb -v /srv/docker/mariadb/mysql:/var/lib/mysql -v /srv/docker/mariadb/my.cnf:/etc/mysql/my.cnf -p 3306:3306 maloute/mariadb
+ExecStop=-/usr/bin/docker stop mariadb
+
+[Install]
+WantedBy=multi-user.target
