@@ -15,7 +15,7 @@ docker run --name=mariadb -v /srv/docker/mariadb/mysql:/var/lib/mysql -v /srv/do
 - Faire un `cd` vers le répertoire où se trouve le fichier `docker-mariadb.service`
 - Activer le service systemd via la commande suivante:
 ```
-systemctl enable /srv/docker/mariadb/docker-mariadb.service
+# systemctl enable /srv/docker/mariadb/docker-mariadb.service
 Created symlink from /etc/systemd/system/multi-user.target.wants/docker-mariadb.service to /srv/docker/mariadb/docker-mariadb.service.
 Created symlink from /etc/systemd/system/docker-mariadb.service to /srv/docker/mariadb/docker-mariadb.service.
 ```
